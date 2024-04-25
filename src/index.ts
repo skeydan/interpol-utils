@@ -1,3 +1,5 @@
+// https://blog.logrocket.com/how-build-ecommerce-app-nestjs/#creating-user-schema-dto
+
 /* 
 Global entry to package functionality.
 Will be delegating to specialized functions such as
@@ -13,6 +15,6 @@ export const interpolate = (file: string, ...replacements: Array<string|number|b
     let replaced = contents.format(...replacements);
     return replaced;
   } catch(e) {
-      console.log(`Error reading file: ${e.stack}`);
+      console.log(`Error reading file: ${(<any>e).stack}`);
   }  
 };

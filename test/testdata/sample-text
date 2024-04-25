@@ -1,0 +1,1 @@
+This is a plain-text file expecting to be passed two variables, of arbitrary name. Here they are: first: ${0}. Second: ${1}.

@@ -8,7 +8,7 @@ const var1 = "Кавказ";
 describe('string.extensions.ts', () => {
   it('String.format on strings', () => {
     let expected = `This is a plain-text file expecting to be passed two variables,
-                    of arbitrary name. Here they are: first: ${0}. Second: ${1}.`;
+                    of arbitrary name. Here they are: first: Украина. Second: Кавказ.`;
     expect(sampleText.format(var0, var1)).toEqual(expected);
   });
 });
