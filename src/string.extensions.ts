@@ -10,6 +10,6 @@ interface String {
 // dollar-prefixed pairs of braces though (${somevar}).
 String.prototype.format = function (...vars: Array<string|number|boolean>): string {
   // replace by position
-  return this.replace(/${(\d+)}/g, function (match: string, number: number): string {
+  return this.replace(/\${(\d+)}/g, function (match: string, number: number): string {
     return typeof vars[number] != "undefined" ? String(vars[number]) : match;
   })};
