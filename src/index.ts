@@ -12,7 +12,7 @@ import { readFileSync } from 'fs';
 export const interpolate = (file: string, ...replacements: Array<string|number|boolean>) : string | void => {
   try {
     let contents = readFileSync(file, 'utf8');
-    let replaced = contents.format(...replacements);
+    let replaced = contents.format(replacements);
     return replaced;
   } catch(e) {
       console.log(`Error reading file: ${(<any>e).stack}`);
