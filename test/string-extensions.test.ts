@@ -1,13 +1,16 @@
 import '../src/string.extensions';
+import { readFileSync } from 'fs';
+import path from 'path';
 
-const sampleText = `This is a plain-text file expecting to be passed two variables, of arbitrary name. Here they are: first: ${0}. Second: ${1}.`
+const datadir = './test/testdata';
+const file = path.join(process.cwd(), datadir, "sample-text");
 const var0 = "Украина";
 const var1 = "Кавказ";
 
 describe('string.extensions.ts', () => {
   it('String.format on strings', () => {
+    let sampleText = readFileSync(file, 'utf8');
     let expected = `This is a plain-text file expecting to be passed two variables, of arbitrary name. Here they are: first: Украина. Second: Кавказ.`;
-    let arr = [var0, var1]
-    expect(sampleText.format(arr)).toEqual(expected);
+     expect(sampleText.format([var0, var1])).toEqual(expected);
   });
 });
